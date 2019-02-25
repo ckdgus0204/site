@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block contents %}
+
+<body>
+    
+
+{% for present in presents %}
+<div class=" container">
+    <br>
+    <div class="card" style="width: 18rem;">
+        <img src="{{present.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{present.title}}</p>
+        </div>
+      </div>
+
+</div>
+
+{% endfor %}
+</body>
+{% endblock %}

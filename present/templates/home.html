@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% block contents %}
+
+<body>
+
+<div class=" container">
+        <form action="{%url 'rank'%}">
+                <div class="form-row align-items-center">
+                  <div class="col-auto my-1">
+                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                    <select class="custom-select mr-sm-2" name="age" id="inlineFormCustomSelect">
+                      <option selected>Choose...</option>
+                      <option >0~10</option>
+                      <option >10~20</option>
+                      <option >20~30</option>
+                      <option >30~40</option>
+                      <option>40~50</option>
+                      <option >50~60</option>
+                      <option>60~</option>
+                    </select>
+                  </div>
+                  <div class="col-auto my-1">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </form>
+</div>
+
+{% for present in presents %}
+<div class=" container">
+    <br>
+    <div class="card" style="width: 18rem;">
+        <img src="{{present.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{present.title}}</p>
+        </div>
+      </div>
+
+</div>
+
+{% endfor %}
+</body>
+{% endblock %}
